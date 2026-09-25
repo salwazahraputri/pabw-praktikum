@@ -23,9 +23,9 @@ Bagian yang di bantu ai : Beberapa bagian kode css Bagian yang saya kerjakan : S
 ### Token yang saya tetapkan
 | Token | Nilai | Untuk apa |
 |---|---|---|
-| --color-primary | #C2185B | tombol, tautan, judul, penanda |
-| --color-fg | #3D2632 | warna teks utama |
-| --color-bg | #FFF5F9 | latar halaman |
+| --color-primary | #2563EB | tombol, tautan, judul, penanda |
+| --color-fg | #F8FAFC | warna teks utama |
+| --color-bg | #0F172A | latar halaman |
 | --radius-md | 0.75rem | sudut tombol dan kartu |
 | --space-4 | 1rem | jarak standar antar elemen |
  
