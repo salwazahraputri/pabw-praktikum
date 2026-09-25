@@ -1,10 +1,4 @@
-/* =========================================
-   TOKENS.CSS
-   Pink Design System
-   ========================================= */
-
-/* ---------- PRIMITIVE TOKENS ---------- */
-
+/* LAPIS 1 — primitif: nilai mentah, tidak menyebut peran apa pun */
 :root {
   /* Warna pink */
   --pink-50: #fff1f7;
@@ -52,8 +46,7 @@
   --text-3xl: 2.5rem;
 }
 
-/* ---------- SEMANTIC TOKENS ---------- */
-
+/* LAPIS 2 — semantik: peran. Isinya mengacu ke lapis 1. */
 :root {
   --color-bg: #fff5f9;
   --color-fg: #3d2632;
