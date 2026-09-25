@@ -1,12 +1,22 @@
 # PABW — Salwa Zahra Putri — 25523068
 
-Selamat datang di repository saya! 👋
+Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi Berbasis Web, satu folder untuk setiap pertemuan.
 
-Repository ini berisi kumpulan pekerjaan mata kuliah **Pengembangan Aplikasi Berbasis Web (PABW)**, dengan satu folder untuk setiap pertemuan.
+## Pertemuan 4 — Halaman profil saya
 
-## 👩‍💻 Tentang Saya
+Topik halaman saya: Profil saya.
 
-Halo! Saya **Salwa Zahra Putri**, mahasiswa **Program Studi Informatika kelas E**.
+• Judul halaman: Nama saya
+• Deskripsi: Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.
+• Tautan navigasi: Tentang, Karya, Kontak
+• Dua bagian utama: tabel, form
+• Kolom tabel: Kegiatan, Peran, Waktu
+• Kolom form: Nama lengkap, Email, NIM, Pesan
+• Gambar: foto-profil.jpg
 
-Saat ini saya sedang mempelajari pengembangan aplikasi berbasis web serta berbagai teknologi yang digunakan dalam pembuatan website.
+# Design token halaman profil
+• Berkas gaya yang akan dibuat: tokens.css, base.css, layout.css, komponen.css, tema.css
+• Warna utama: Dusty Rose (#D96C8A) , dipilih karena suka warna pink yang lembut dan elegan.
 
+# Catatan penggunaan AI
+Bagian yang di bantu ai : Beberapa bagian kode css Bagian yang saya kerjakan : Style web dan profil.html
