@@ -52,7 +52,7 @@
   <header class="kepala">
 
     <!-- ISI 2 — nama Anda, atau nama panggilan yang Anda pakai. -->
-
+<button id="tombolTema" type="button">Tema gelap</button>
     <h1>Salwa Zahra Putri</h1>
 
     <!-- ISI 3 — satu kalimat tentang diri Anda. -->
@@ -70,7 +70,7 @@
       </ul>
 
     </nav>
-
+  
   </header>
 
 
@@ -380,5 +380,18 @@
 
 
 </body>
+<script>
+  const tombolTema = document.getElementById("tombolTema");
+
+  tombolTema.addEventListener("click", function () {
+    document.documentElement.classList.toggle("tema-gelap");
+
+    if (document.documentElement.classList.contains("tema-gelap")) {
+      tombolTema.textContent = "Tema terang";
+    } else {
+      tombolTema.textContent = "Tema gelap";
+    }
+  });
+</script>
 
 </html>
