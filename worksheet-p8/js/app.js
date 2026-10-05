@@ -34,7 +34,7 @@ console.log(keahlian);
 console.log(jumlahProyek);
 
 // 1. Menyusun kalimat perkenalan dari satu object
-function buatPerkenalan({ nama, peran }) {
+function buatPerkenalan({ nama, peran = "Mahasiswa Informatika" }) {
   return `${nama} — ${peran}`;
 }
 
@@ -43,3 +43,6 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
+console.log(buatPerkenalan({ nama: "Ayu", peran: "Mahasiswa" }));
+console.log(buatPerkenalan({ nama: "Budi", peran: "Programmer" }));
+console.log(buatPerkenalan({ nama: "Citra" }));
