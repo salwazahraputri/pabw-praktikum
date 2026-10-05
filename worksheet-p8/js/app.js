@@ -9,3 +9,13 @@ tombolTema.addEventListener("click", function () {
     tombolTema.textContent = "Tema gelap";
   }
 });
+
+const profil = {
+  nama: "Nama Anda",
+  peran: "Mahasiswa Informatika",
+  keahlian: ["HTML", "CSS", "JavaScript"],
+};
+
+const kalimat = `Nama saya ${profil.nama}, dan saya belajar ${profil.keahlian.length} hal.`;
+
+console.log(kalimat);
