@@ -1,0 +1,181 @@
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Label */
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+/* Kolom isian */
+input,
+select,
+textarea {
+  font: inherit;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+/* Tombol */
+button {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  cursor: pointer;
+}
+
+/* Focus hanya muncul saat pengguna memakai papan ketik */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Hanya setelah pengguna mengetik sesuatu yang tidak sah */
+input:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+/* Pesan galat */
+.pesan-galat {
+  display: none;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.form-kolom:has(input:user-invalid) .pesan-galat {
+  display: block;
+}
+
+/* Tata letak form */
+fieldset p {
+  display: grid;
+  grid-template-columns: 10rem minmax(15rem, 26rem) 1fr;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+fieldset label {
+  font-weight: 700;
+}
+
+fieldset input,
+fieldset textarea,
+fieldset select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+fieldset textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+#nim-bantuan {
+  font-size: var(--text-sm);
+}
+
+fieldset button {
+  margin-left: 10rem;
+}
+
+/* Styling tabel minimalis */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4, 1rem) 0;
+  background-color: transparent;
+}
+
+caption {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 0.75rem;
+  color: var(--color-fg, #362D2B);
+}
+
+th,
+td {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border, #B8AD9F);
+  color: var(--color-fg, #362D2B);
+}
+
+th {
+  background-color: transparent;
+  color: var(--color-primary, #8F365D);
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-primary, #8F365D);
+}
+
+/* Kolom paling kiri */
+tbody th {
+  background-color: transparent;
+  color: var(--color-fg, #362D2B);
+  font-weight: 600;
+}
+
+/* Galeri: jumlah kolom menyesuaikan lebar layar */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+/* Kartu */
+.kartu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--card-pad);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+/* Baris di dasar kartu */
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+/* Media di dalam kartu */
+.kartu video,
+.kartu img {
+  max-width: 100%;
+  height: auto;
+}
+
+.galeri li:first-child {
+  grid-column: span 2;
+}
+
+.galeri .kartu {
+  display: grid;
+  align-content: start;
+  min-height: 14rem;
+}
+
+.kartu__isi {
+  min-width: 0;
+}
+
+.kartu__judul {
+  overflow-wrap: anywhere;
+}

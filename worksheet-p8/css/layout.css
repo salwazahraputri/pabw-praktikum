@@ -1,0 +1,89 @@
+header {
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-baris {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "kepala"
+    "isi"
+    "kaki";
+  min-height: 100dvh;
+}
+
+.page > header {
+  grid-area: kepala;
+}
+
+.page > main {
+  grid-area: isi;
+}
+
+.page > footer {
+  grid-area: kaki;
+}
+
+.isi {
+  display: grid;
+  grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+.konten {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  min-width: 0;
+}
+
+footer {
+  margin-top: var(--space-6);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-fg);
+  font-size: var(--text-sm);
+}
+
+/* Tabel dapat bergulir sendiri pada layar sempit */
+table {
+  display: block;
+  width: 100%;
+  min-width: 600px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
