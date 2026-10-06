@@ -16,6 +16,13 @@ const profil = {
   keahlian: ["HTML", "CSS", "JavaScript"],
 };
 
+// Peragaan spread operator
+console.log("Dengan spread:");
+console.log({ ...profil });
+
+console.log("Tanpa spread:");
+console.log({ profil });
+
 const daftarProyek = [
   { judul: "Halaman Profil", tahun: 2026, selesai: true },
   { judul: "Katalog Produk", tahun: 2026, selesai: false },
@@ -71,7 +78,9 @@ const judulProyek = daftarProyek.map((proyek) => proyek.judul);
 
 console.log(judulProyek);
 
-const urutanProyek = [...daftarProyek].sort((a, b) => a.judul.localeCompare(b.judul));
+const urutanProyek = [...daftarProyek].sort((a, b) =>
+  a.judul.localeCompare(b.judul)
+);
 
 console.log("Hasil sort:", urutanProyek);
 console.log("Data asli:", daftarProyek);
