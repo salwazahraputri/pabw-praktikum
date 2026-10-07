@@ -1,5 +1,21 @@
+import { daftarProyek } from "./app.js";
 
-import { profil, daftarProyek } from "./app.js";
+const wadah = document.querySelector("#daftar");
+const kosong = document.querySelector("#pesan-kosong");
 
-console.log("Data profil:", profil);
-console.log("Daftar proyek:", daftarProyek);
+function buatKartu(proyek) {
+  const li = document.createElement("li");
+  li.className = "kartu";
+  li.textContent = proyek.judul;
+  return li;
+}
+
+function render(proyek) {
+  wadah.textContent = "";
+
+  proyek.forEach((item) => {
+    wadah.append(buatKartu(item));
+  });
+}
+
+render(daftarProyek);
