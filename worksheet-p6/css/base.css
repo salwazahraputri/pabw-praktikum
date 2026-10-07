@@ -1,0 +1,72 @@
+html {
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  padding: var(--space-4);
+  max-width: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: var(--text-xl);
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+h3 {
+  font-size: var(--text-md);
+  overflow-wrap: break-word;
+}
+
+/* Membatasi lebar teks agar tidak keluar layar */
+main p {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Gambar tidak melebihi wadah */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tabel dapat digulir secara horizontal */
+.table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Teks mengikuti ukuran huruf pengguna */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+/* Mencegah elemen keluar dari layar */
+header,
+main,
+section,
+footer {
+  max-width: 100%;
+  min-width: 0;
+}
