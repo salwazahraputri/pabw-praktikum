@@ -10,12 +10,17 @@ function buatKartu(proyek) {
   return li;
 }
 
-function render(proyek) {
+function render(daftar) {
   wadah.textContent = "";
 
-  proyek.forEach((item) => {
-    wadah.append(buatKartu(item));
-  });
+  if (daftar.length === 0) {
+    kosong.hidden = false;
+    return;
+  }
+
+  kosong.hidden = true;
+
+  daftar.forEach((proyek) => wadah.append(buatKartu(proyek)));
 }
 
 function tandaiTombolAktif(tombolAktif) {
@@ -42,3 +47,90 @@ barisFilter.addEventListener("click", (event) => {
 });
 
 render(daftarProyek);
+
+const form = document.querySelector("#kontak form");
+const tombolKirim = form.querySelector('button[type="submit"]');
+const kolomForm = form.querySelectorAll("input, textarea");
+
+function pesanGalat(kolom) {
+  if (kolom.id === "nama") {
+    return "Nama lengkap wajib diisi.";
+  }
+
+  if (kolom.id === "email") {
+    return "Masukkan email dengan format yang benar.";
+  }
+
+  if (kolom.id === "nim") {
+    return "NIM harus terdiri dari 8 digit angka.";
+  }
+
+  if (kolom.id === "pesan") {
+    return "Pesan wajib diisi.";
+  }
+
+  return "Periksa kembali kolom ini.";
+}
+
+function validasiKolom(kolom) {
+  const nilai = kolom.value.trim();
+  const sah = nilai !== "" && kolom.checkValidity();
+
+  let pesan = kolom.parentElement.querySelector(".pesan-galat");
+
+  if (!pesan) {
+    pesan = document.createElement("span");
+    pesan.className = "pesan-galat";
+    kolom.parentElement.append(pesan);
+  }
+
+  if (!sah) {
+    kolom.setAttribute("aria-invalid", "true");
+    pesan.textContent = pesanGalat(kolom);
+  } else {
+    kolom.setAttribute("aria-invalid", "false");
+    pesan.textContent = "";
+  }
+
+  return sah;
+}
+
+function validasiForm() {
+  let sah = true;
+
+  kolomForm.forEach((kolom) => {
+    if (!validasiKolom(kolom)) {
+      sah = false;
+    }
+  });
+
+  tombolKirim.disabled = !sah;
+
+  return sah;
+}
+
+kolomForm.forEach((kolom) => {
+  kolom.addEventListener("input", () => {
+    validasiForm();
+  });
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const sah = validasiForm();
+
+  if (!sah) {
+    const kolomBermasalah = Array.from(kolomForm).find(
+      (kolom) => !validasiKolom(kolom)
+    );
+
+    if (kolomBermasalah) {
+      kolomBermasalah.focus();
+    }
+
+    return;
+  }
+
+  alert("Form berhasil divalidasi dan siap dikirim.");
+});
