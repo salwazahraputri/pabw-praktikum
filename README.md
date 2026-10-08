@@ -14,7 +14,8 @@ Topik halaman saya: Profil saya.
 - Gambar: foto-profil.jpg
 
 # Catatan penggunaan AI
-Bagian yang di bantu ai : Beberapa bagian kode css Bagian yang saya kerjakan : Style web dan profil.html
+Bagian yang dibantu AI: Beberapa bagian kode CSS dan JavaScript.
+Bagian yang saya kerjakan sendiri: Struktur profil.html, isi profil, dan penyesuaian style/tampilan web.
 
 # Design token halaman profil
 - Berkas gaya yang akan dibuat: tokens.css, base.css, layout.css, komponen.css, tema.css
