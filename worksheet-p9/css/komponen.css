@@ -179,3 +179,8 @@ tbody th {
 .kartu__judul {
   overflow-wrap: anywhere;
 }
+
+.aktif {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
