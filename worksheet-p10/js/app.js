@@ -1,14 +1,19 @@
+
+import { ambilNotisia } from './api.js';
+
 const tombolTema = document.getElementById("tombolTema");
 
-tombolTema.addEventListener("click", function () {
-  document.documentElement.classList.toggle("tema-gelap");
+if (tombolTema) {
+  tombolTema.addEventListener("click", function () {
+    document.documentElement.classList.toggle("tema-gelap");
 
-  if (document.documentElement.classList.contains("tema-gelap")) {
-    tombolTema.textContent = "Tema terang";
-  } else {
-    tombolTema.textContent = "Tema gelap";
-  }
-});
+    if (document.documentElement.classList.contains("tema-gelap")) {
+      tombolTema.textContent = "Tema terang";
+    } else {
+      tombolTema.textContent = "Tema gelap";
+    }
+  });
+}
 
 export const profil = {
   nama: "Nama Anda",
@@ -43,7 +48,10 @@ console.log(keahlian);
 console.log(jumlahProyek);
 
 // 1. Menyusun kalimat perkenalan dari satu object
-function buatPerkenalan({ nama, peran = "Mahasiswa Informatika" }) {
+function buatPerkenalan({
+  nama,
+  peran = "Mahasiswa Informatika"
+}) {
   return `${nama} — ${peran}`;
 }
 
@@ -64,7 +72,9 @@ console.log(daftarProyek[1].tahun);
 console.table(profil.keahlian);
 console.table(daftarProyek);
 
-const selesai = daftarProyek.filter((proyek) => proyek.selesai);
+const selesai = daftarProyek.filter(
+  (proyek) => proyek.selesai
+);
 
 console.table(selesai);
 
@@ -74,7 +84,9 @@ const katalog = daftarProyek.find(
 
 console.log(katalog);
 
-const judulProyek = daftarProyek.map((proyek) => proyek.judul);
+const judulProyek = daftarProyek.map(
+  (proyek) => proyek.judul
+);
 
 console.log(judulProyek);
 
@@ -84,3 +96,23 @@ const urutanProyek = [...daftarProyek].sort((a, b) =>
 
 console.log("Hasil sort:", urutanProyek);
 console.log("Data asli:", daftarProyek);
+
+// P10 B.1 — Pemanggilan API dengan async/await
+async function mulai() {
+  try {
+    const data = await ambilNotisia();
+
+    console.log("data berita", data);
+
+    if (Array.isArray(data) && data.length === 0) {
+      console.log("Belum ada berita.");
+    }
+  } catch (galat) {
+    console.error(
+      "gagal menampilkan berita",
+      galat.message
+    );
+  }
+}
+
+mulai();
