@@ -1,6 +1,7 @@
 
 import { state, pilihKategori } from "./state.js";
 import { render, tandaiTombolAktif } from "./dom.js";
+import { aturUlang } from "./simpanan.js";
 
 export function pasangPendengar() {
   // Filter Karya Saya
@@ -18,6 +19,16 @@ export function pasangPendengar() {
     tandaiTombolAktif(tombol);
     });
   }
+
+    // Tombol atur ulang
+    const tombolAturUlang = document.querySelector("#tombolAturUlang");
+
+    if (tombolAturUlang) {
+        tombolAturUlang.addEventListener("click", () => {
+            aturUlang();
+            location.reload();
+        });
+    }
 
   
   // Tema gelap dan terang
