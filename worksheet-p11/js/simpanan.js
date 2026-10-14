@@ -12,11 +12,20 @@ export function simpan(state) {
 
 export function muat() {
   try {
-    return JSON.parse(localStorage.getItem(KUNCI));
+    const isi = JSON.parse(localStorage.getItem(KUNCI));
+
+    if (isi?.versi !== VERSI) {
+      localStorage.removeItem(KUNCI); // bentuk lama: buang
+      return null;
+    }
+
+    return isi;
   } catch {
+    localStorage.removeItem(KUNCI); // isi rusak: buang
     return null;
   }
 }
+
 
 export function aturUlang() {
   localStorage.removeItem(KUNCI);
