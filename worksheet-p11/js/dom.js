@@ -13,20 +13,36 @@ function buatKartu(proyek) {
   return li;
 }
 
+// Menyaring proyek berdasarkan state
+function saring(state) {
+  if (state.kategoriAktif === "semua") {
+    return state.daftarProyek;
+  }
+
+  return state.daftarProyek.filter(
+    (proyek) => proyek.kategori === state.kategoriAktif
+  );
+}
+
 // Menampilkan daftar proyek
-export function render(daftar = daftarProyek) {
+export function render(state) {
   if (!wadah || !kosong) return;
 
+  // 1. Kosongkan wadah
   wadah.textContent = "";
 
-  if (daftar.length === 0) {
+  const tampil = saring(state);
+
+  // 2. Periksa keadaan kosong
+  if (tampil.length === 0) {
     kosong.hidden = false;
     return;
   }
 
   kosong.hidden = true;
 
-  daftar.forEach((proyek) => {
+  // 3. Isi ulang dari state
+  tampil.forEach((proyek) => {
     wadah.append(buatKartu(proyek));
   });
 }

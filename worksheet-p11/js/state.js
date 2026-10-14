@@ -1,4 +1,6 @@
+
 import { profil, daftarProyek } from "./data.js";
+import { render } from "./dom.js";
 
 export const state = {
   profil,
@@ -6,10 +8,8 @@ export const state = {
   kategoriAktif: "semua"
 };
 
-export function ubahKategori(kategori) {
-  state.kategoriAktif = kategori;
-}
-
-export function ubahDaftarProyek(daftar) {
-  state.daftarProyek = daftar;
+export function pilihKategori(nilai) {
+  state.kategoriAktif = nilai;
+  console.log(state);
+  render(state);
 }

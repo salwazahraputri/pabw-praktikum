@@ -1,5 +1,5 @@
 
-import { state, ubahKategori } from "./state.js";
+import { state, pilihKategori } from "./state.js";
 import { render, tandaiTombolAktif } from "./dom.js";
 
 export function pasangPendengar() {
@@ -14,19 +14,24 @@ export function pasangPendengar() {
       const kategori = tombol.dataset.kategori;
       if (!kategori) return;
 
-      ubahKategori(kategori);
-      tandaiTombolAktif(tombol);
-
-      const terpilih =
-        kategori === "semua"
-          ? state.daftarProyek
-          : state.daftarProyek.filter(
-              (proyek) => proyek.kategori === kategori
-            );
-
-      render(terpilih);
+    pilihKategori(kategori);
+    tandaiTombolAktif(tombol);
     });
   }
+
+  
+  // Tema gelap dan terang
+  const tombolTema = document.querySelector("#tombolTema");
+
+  if (tombolTema) {
+    tombolTema.addEventListener("click", () => {
+      const gelap =
+        document.documentElement.classList.toggle("tema-gelap");
+
+      tombolTema.textContent = gelap ? "Tema terang" : "Tema gelap";
+    });
+  }
+
 
   // Validasi formulir kontak
   const form = document.querySelector("#kontak form");
@@ -56,9 +61,11 @@ export function pasangPendengar() {
     }
 
     function validasiKolom(kolom) {
-      const sah = kolom.value.trim() !== "" && kolom.checkValidity();
+      const sah =
+        kolom.value.trim() !== "" && kolom.checkValidity();
 
-      let pesan = kolom.parentElement.querySelector(".pesan-galat");
+      let pesan =
+        kolom.parentElement.querySelector(".pesan-galat");
 
       if (!pesan) {
         pesan = document.createElement("span");
@@ -76,10 +83,15 @@ export function pasangPendengar() {
       let sah = true;
 
       kolomForm.forEach((kolom) => {
-        if (!validasiKolom(kolom)) sah = false;
+        if (!validasiKolom(kolom)) {
+          sah = false;
+        }
       });
 
-      if (tombolKirim) tombolKirim.disabled = !sah;
+      if (tombolKirim) {
+        tombolKirim.disabled = !sah;
+      }
+
       return sah;
     }
 
