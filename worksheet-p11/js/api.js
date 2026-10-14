@@ -1,4 +1,5 @@
-const ALAMAT = 'https://jsonplaceholder.typicode.com/posts';
+const ALAMAT = "https://jsonplaceholder.typicode.com/posts";
+
 
 export async function ambilNotisia() {
   try {
@@ -35,3 +36,13 @@ const badan = JSON.stringify({
 console.log('Objek menjadi teks:');
 console.log(badan);
 console.log('Jenis data:', typeof badan);
+
+export async function mulaiBerita() {
+  try {
+    const data = await ambilNotisia();
+    const { renderBerita } = await import("./dom.js");
+    renderBerita(data);
+  } catch (galat) {
+    console.error("Gagal memuat berita:", galat.message);
+  }
+}
