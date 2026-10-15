@@ -75,7 +75,7 @@ async function tampilkanNotisia() {
 
     wadahBerita.textContent = "";
 
-    daftar.forEach((n) => {
+    daftar.slice(0, 5).forEach((n) => {
       const kartu = document.createElement("article");
       kartu.className = "kartu";
 
