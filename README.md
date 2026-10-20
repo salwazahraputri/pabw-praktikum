@@ -1,88 +1,76 @@
 # PABW — Salwa Zahra Putri — 25523068
 
-Repo ini memuat pekerjaan mata kuliah Pengembangan Aplikasi Berbasis Web, satu folder untuk setiap pertemuan.
+Repositori ini berisi pekerjaan praktikum mata kuliah Pengembangan Aplikasi Berbasis Web (PABW), mulai dari Pertemuan 4 dan seterusnya. Setiap pertemuan disimpan dalam folder masing-masing.
 
-## Pertemuan 4 — Halaman profil saya
+## Pertemuan 4 — Halaman Profil Saya
 
-Topik halaman saya: Profil saya.
-- Judul halaman: Nama saya
-- Deskripsi: Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.
-- Tautan navigasi: Tentang, Karya, Kontak
-- Dua bagian utama: tabel, form
-- Kolom tabel: Kegiatan, Peran, Waktu
-- Kolom form: Nama lengkap, Email, NIM, Pesan
-- Gambar: foto-profil.jpg
+- **Topik:** Profil mahasiswa.
+- **Judul halaman:** Profil Salwa Zahra Putri — PABW 2026/2027.
+- **Deskripsi:** Halaman profil mahasiswa yang memuat informasi tentang diri, karya, kegiatan, dan kontak.
+- **Navigasi:** Tentang, Karya, Kontak.
+- **Bagian halaman:** Tabel kegiatan dan formulir kontak.
+- **Kolom tabel:** Kegiatan, Peran, Waktu.
+- **Kolom formulir:** Nama lengkap, Email, NIM, Pesan.
+- **Gambar:** `foto-profil.jpg`.
 
-# Catatan penggunaan AI
-Bagian yang dibantu AI: Beberapa bagian kode CSS dan JavaScript.
-Bagian yang saya kerjakan sendiri: Struktur profil.html, isi profil, dan penyesuaian style/tampilan web.
+## Catatan Penggunaan AI
 
-# Design token halaman profil
-- Berkas gaya yang akan dibuat: tokens.css, base.css, layout.css, komponen.css, tema.css
-- Warna utama: Dusty Rose (#D96C8A) , dipilih karena suka warna pink yang lembut dan elegan dan santai.
+- **Bagian yang dibantu AI:** Membantu menjelaskan konsep, memberikan saran perbaikan kode CSS dan JavaScript, serta membantu memahami struktur komponen dan pengelolaan state pada Vue.
+- **Bagian yang saya kerjakan sendiri:** Menjalankan perintah di terminal, membuat dan mengatur berkas proyek, menguji halaman di browser, memeriksa hasil build, menguji filter dan penyimpanan data, serta menyimpan perubahan ke Git.
 
-### Token yang saya tetapkan
-| Token | Nilai | Untuk apa |
+## Design Token Halaman Profil
+
+- **Warna pilihan:** Dusty Rose (`#D96C8A`), karena memberikan kesan pink yang lembut, elegan, dan santai.
+- **Berkas gaya:** `tokens.css`, `base.css`, `layout.css`, `komponen.css`, `tema.css`, dan `responsif.css`.
+
+| Token | Nilai | Fungsi |
 |---|---|---|
-| --color-primary | #2563EB | tombol, tautan, judul, penanda |
-| --color-fg | #F8FAFC | warna teks utama |
-| --color-bg | #0F172A | latar halaman |
-| --radius-md | 0.75rem | sudut tombol dan kartu |
-| --space-4 | 1rem | jarak standar antar elemen |
- 
-Kriteria selesai saya: mengubah --color-primary di satu baris
-harus mengubah warna tombol, tautan, judul, dan garis fokus.
+| `--color-primary` | `#2563EB` | Tombol, tautan, judul, dan penanda |
+| `--color-fg` | `#F8FAFC` | Warna teks utama |
+| `--color-bg` | `#0F172A` | Warna latar halaman |
+| `--radius-md` | `0.75rem` | Sudut tombol dan kartu |
+| `--space-4` | `1rem` | Jarak standar antarelemen |
 
-# Praktikum P04 — Design Token untuk Halaman Profil Saya
+**Kriteria selesai:** Perubahan nilai `--color-primary` pada satu tempat dapat mengubah warna elemen yang menggunakan token tersebut.
 
-Starter: `kerangka-profil.html`. Berkas ini sudah lengkap dan sudah lolos
-W3C Nu Html Checker serta Lighthouse Accessibility. Jangan mengubah
-strukturnya — tampilan diubah dari berkas CSS.
+## Pertemuan 12 — Migrasi ke Vue dan Build Produksi
 
-## Isi paket
+Pada Pertemuan 12, halaman profil dipindahkan ke proyek Vue menggunakan Vite. Halaman dipecah menjadi komponen, state dikelola menggunakan `reactive()`, dan penyimpanan pilihan filter menggunakan `localStorage`.
 
-- `kerangka-profil.html` — salin menjadi `profil.html` ke folder `worksheet-p4/`
-- `media/foto-profil.jpg` — gambar contoh; ganti dengan foto Anda sendiri
-- `bukti/` — folder kosong untuk tangkapan layar
+### Komponen
 
-## Tiga pekerjaan
+- `KepalaProfil.vue` — menampilkan nama dan peran profil melalui props.
+- `TombolFilter.vue` — menyediakan pilihan kategori proyek.
+- `DaftarProyek.vue` — menampilkan proyek berdasarkan kategori aktif.
+- `FormKontak.vue` — menyediakan formulir kontak.
 
-1. Ganti sembilan penanda `[ISI]` di dalam `profil.html` (Lembar B).
-2. **Wajib, dinilai** — tambahkan MINIMAL TIGA bagian baru di dalam `<main>`,
-   masing-masing memakai elemen semantik yang berbeda satu sama lain dan belum
-   terpakai (Lembar B). Pilihan: `<details>`, galeri `<figure>`, lini masa
-   `<ol>`, `<dl>`, `<blockquote>`, `<article>`. Semuanya ikut digayakan memakai
-   token yang sama.
-3. Buat LIMA berkas gaya di folder `css/`, lalu buka komentar lima baris `<link>`
-   di dalam `<head>` — urutannya menentukan hasil akhir:
+### Perkakas
 
-   | Berkas | Isi | Lembar |
-   |---|---|---|
-   | `css/tokens.css` | dua lapis token: nilai mentah + peran | D |
-   | `css/base.css` | reset ringan, box-sizing, tipografi | E |
-   | `css/layout.css` | navbar flex, katalog kartu, footer | F |
-   | `css/komponen.css` | gaya form, fokus, isian tidak sah | G |
-   | `css/tema.css` | tema gelap dan tombol pengalihnya | H |
+- **Node.js:** `v24.22.1`
+- **npm:** `11.19.1`
 
-## Evaluasi yang dilaporkan
+### Pengujian Build
 
-Tulis di README ini, satu paragraf per bagian tambahan: elemen apa, untuk siapa,
-dan menjawab apa. Lalu catat hasil evaluasinya (Lembar I.6):
+Build produksi dijalankan menggunakan `npm run build`, kemudian hasilnya diuji menggunakan `npm run preview`.
 
-- W3C — Nu Html Checker: jumlah error setelah penambahan (target 0)
-- WCAG — kontras AA di tema terang dan gelap
-- WCAG — seluruh bagian baru dapat dicapai dengan Tab
-- WCAG — tetap dapat dipahami tanpa bantuan warna
+| Pengujian | Hasil |
+|---|---|
+| Sebelum build — server pengembangan | 33 permintaan; 1,6 MB ditransfer |
+| Sesudah build — server preview | 11 permintaan; 150 kB ditransfer |
+| Hasil build | Berhasil; folder `dist/` terbentuk |
+| Pengujian halaman | Halaman tampil dan filter berfungsi |
+| Console | Tidak ditemukan galat aplikasi saat pengujian |
 
-## Waktu
+*Catatan: ukuran dan jumlah permintaan merupakan hasil pengamatan saat praktikum. Hasil dapat berbeda karena cache, ekstensi browser, dan permintaan eksternal.*
 
-90 menit di kelas hanya cukup sampai Lembar D: tiga struktur sudah berdiri,
-keputusan token tercatat, dan `tokens.css` sudah memuat kelima berkas gaya.
-Lembar E sampai I — base.css, layout, form, tema gelap, dan evaluasi W3C + WCAG —
-diselesaikan di luar kelas sampai pukul 23.59 hari yang sama.
+### Pengelolaan Git
 
-## Pengumpulan
+Folder `node_modules/` dan `dist/` diabaikan melalui `.gitignore`. Berkas `package-lock.json` disimpan di repositori untuk menjaga konsistensi versi dependensi. Hasil build dapat dibuat kembali menggunakan `npm run build`.
 
-Folder `worksheet-p4/` di dalam repositori GitHub Anda sendiri, berisi
-`profil.html`, `css/`, `media/`, dan `bukti/`. Sudah di-commit dan di-push
-sebelum **pukul 23.59 hari yang sama**. Tidak ada perpanjangan.
+## Catatan Praktikum P04
+
+Starter praktikum adalah `kerangka-profil.html`, yang disalin menjadi `profil.html` di folder `worksheet-p4/`. Struktur HTML dipertahankan, sedangkan tampilan diatur melalui berkas CSS.
+
+Pekerjaan P04 mencakup pengisian konten profil, penambahan bagian semantik, pembuatan lima berkas gaya, serta evaluasi HTML dan aksesibilitas menggunakan W3C Nu Html Checker dan kriteria WCAG.
+
+**Catatan evaluasi:** Hasil pemeriksaan W3C dan WCAG perlu diisi berdasarkan pengujian yang benar-benar dilakukan.
