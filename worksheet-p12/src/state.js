@@ -1,22 +1,22 @@
-import { profil, daftarProyek } from "./data.js";
-import { render } from "./dom.js";
-import { muat, simpan } from "./simpanan.js";
 
-const simpanan = muat();
+import { reactive } from 'vue'
+import { profil, daftarProyek } from './data.js'
+import { muat, simpan } from './simpanan.js'
 
-export const state = {
+const simpanan = muat()
+
+export const state = reactive({
   profil,
   daftarProyek,
   kategoriAktif:
     simpanan &&
     simpanan.versi === 2 &&
-    ["semua", "web", "data"].includes(simpanan.kategoriAktif)
+    ['semua', 'web', 'data'].includes(simpanan.kategoriAktif)
       ? simpanan.kategoriAktif
-      : "semua"
-};
+      : 'semua',
+})
 
 export function pilihKategori(nilai) {
-  state.kategoriAktif = nilai;
-  simpan(state);
-  render(state);
+  state.kategoriAktif = nilai
+  simpan(state)
 }
